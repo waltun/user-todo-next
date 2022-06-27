@@ -1,4 +1,4 @@
-import Navbar from "../../components/homePge/navbar";
+import Navbar from "../../components/homePage/navbar";
 
 export default function Articles() {
   return (
