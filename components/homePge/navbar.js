@@ -1,6 +1,15 @@
 import Link from "next/link";
+import { useState } from "react";
+import { UserCircleIcon } from "@heroicons/react/outline";
+import NavbarDropdown from "./navbarDropdown";
 
 const Navbar = () => {
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
   return (
     <>
       <nav className="bg-gray-200 border-gray-400 px-2 sm:px-4 py-2.5 rounded m-4 font-IRANSans">
@@ -12,54 +21,14 @@ const Navbar = () => {
               </span>
             </a>
           </Link>
-          <div className="flex items-center md:order-2">
-            <button className="flex mr-3 text-sm text-black bg-gray-300 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 px-4 py-1">
-              Open menu
+          <div className="flex items-center md:order-2 relative">
+            <button
+              onClick={handleDropdown}
+              className="flex mr-3 text-sm text-black bg-gray-300 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 px-4 py-1"
+            >
+              <UserCircleIcon className="h-7 w-7 text-black" />
             </button>
-            <div className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow">
-              <div className="py-3 px-4">
-                <span className="block text-sm text-gray-900">
-                  Bonnie Green
-                </span>
-                <span className="block text-sm font-medium text-gray-500 truncate">
-                  name@flowbite.com
-                </span>
-              </div>
-              <ul className="py-1" aria-labelledby="dropdown">
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Earnings
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {dropdown ? <NavbarDropdown /> : null}
             <button className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
               <span className="sr-only">Open main menu</span>
               <svg
