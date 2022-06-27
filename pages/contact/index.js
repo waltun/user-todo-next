@@ -1,8 +1,15 @@
-export default function Home() {
-    return (
-      <div className="flex justify-center">
-        <p className="text-2xl font-bold">Contact Page</p>
+import Navbar from "../../components/homePge/navbar";
+
+export default function Contact() {
+  return (
+    <>
+      <Navbar />
+
+      <div className="mt-4 flex justify-center">
+        <p className="text-xl font-bold text-gray-600">
+          Contact Page
+        </p>
       </div>
-    );
-  }
-  
+    </>
+  );
+}
