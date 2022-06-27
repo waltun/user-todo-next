@@ -1,8 +1,5 @@
-export default function Register() {
-    return (
-      <div className="flex justify-center">
-        <p className="text-2xl font-bold">Register</p>
-      </div>
-    )
-  }
-  
+import Register from "../../components/auth/register";
+
+export default function pageRegister() {
+  return <Register />;
+}
