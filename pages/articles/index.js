@@ -1,15 +1,12 @@
 import Navbar from "../../components/homePage/navbar";
+import Articles from "../../components/homePage/articles";
 
-export default function Articles() {
+export default function pageArticles() {
   return (
     <>
       <Navbar />
 
-      <div className="mt-4 flex justify-center">
-        <p className="text-xl font-bold text-gray-600">
-          Articles Page
-        </p>
-      </div>
+      <Articles />
     </>
   );
 }
