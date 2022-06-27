@@ -1,3 +1,10 @@
+@import url("./../public/fonts/font.css");
+
 @tailwind base;
 @tailwind components;
+
+body {
+  direction: rtl;
+}
+
 @tailwind utilities;
