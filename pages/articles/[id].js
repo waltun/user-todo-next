@@ -1,3 +1,4 @@
+import ArticleSingle from "../../components/homePage/articles/single";
 import Navbar from "../../components/homePage/navbar";
 
 export default function SingleArticle() {
@@ -5,9 +6,7 @@ export default function SingleArticle() {
     <>
       <Navbar />
 
-      <div className="mt-4 flex justify-center">
-        <p className="text-xl font-bold text-gray-600">Article Single Page</p>
-      </div>
+      <ArticleSingle />
     </>
   );
 }
