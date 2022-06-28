@@ -1,12 +1,12 @@
-import Navbar from "../../components/homePage/navbar";
 import Articles from "../../components/homePage/articles";
+import HomeLayout from "../../components/layout/home";
 
-export default function pageArticles() {
-  return (
-    <>
-      <Navbar />
+const PageArticles = () => {
+  return <Articles />;
+};
 
-      <Articles />
-    </>
-  );
-}
+PageArticles.getLayout = (page) => {
+  return <HomeLayout>{page}</HomeLayout>;
+};
+
+export default PageArticles;

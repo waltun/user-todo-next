@@ -1,13 +1,17 @@
-import Navbar from "../../components/homePage/navbar";
+import HomeLayout from "../../components/layout/home";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <>
-      <Navbar />
-
       <div className="mt-4 flex justify-center">
         <p className="text-xl font-bold text-gray-600">Contact Page</p>
       </div>
     </>
   );
-}
+};
+
+Contact.getLayout = (page) => {
+  return <HomeLayout>{page}</HomeLayout>;
+};
+
+export default Contact;

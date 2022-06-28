@@ -1,15 +1,17 @@
-import Navbar from "../../components/homePage/navbar";
+import HomeLayout from '../../components/layout/home'
 
-export default function About() {
+const About = () => {
   return (
     <>
-      <Navbar />
-
       <div className="mt-4 flex justify-center">
-        <p className="text-xl font-bold text-gray-600">
-          About Page
-        </p>
+        <p className="text-xl font-bold text-gray-600">About Page</p>
       </div>
     </>
   );
+};
+
+About.getLayout = (page) => {
+  return <HomeLayout>{page}</HomeLayout>
 }
+
+export default About;

@@ -1,12 +1,12 @@
 import ArticleSingle from "../../components/homePage/articles/single";
-import Navbar from "../../components/homePage/navbar";
+import HomeLayout from "../../components/layout/home";
 
-export default function SingleArticle() {
-  return (
-    <>
-      <Navbar />
+const SingleArticle = () => {
+  return <ArticleSingle />;
+};
 
-      <ArticleSingle />
-    </>
-  );
-}
+SingleArticle.getLayout = (page) => {
+  return <HomeLayout>{page}</HomeLayout>;
+};
+
+export default SingleArticle;
