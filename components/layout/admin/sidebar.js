@@ -65,9 +65,11 @@ const Sidebar = () => {
                   مدیریت مقالات
                 </a>
               </Link>
-              <a className="block text-sm text-gray-600 py-2 px-4 hover:bg-gray-100 hover:text-black rounded-md">
-                ایجاد مقاله جدید
-              </a>
+              <Link href="/admin-panel/articles/create">
+                <a className="block text-sm text-gray-600 py-2 px-4 hover:bg-gray-100 hover:text-black rounded-md">
+                  ایجاد مقاله جدید
+                </a>
+              </Link>
             </div>
           ) : null}
         </div>
