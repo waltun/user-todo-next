@@ -1,4 +1,4 @@
-import Navbar from "../homePage/navbar";
+import Navbar from "../home-page/navbar";
 
 const HomeLayout = ({ children }) => {
   return (
