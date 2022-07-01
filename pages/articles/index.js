@@ -1,4 +1,4 @@
-import Articles from "../../components/homePage/articles";
+import Articles from "../../components/home-page/articles";
 import HomeLayout from "../../components/layout/home";
 
 const PageArticles = () => {
