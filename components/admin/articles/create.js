@@ -26,9 +26,9 @@ const Create = () => {
     });
   };
 
-  const handleForm = (event) => {
+  const handleForm = async (event) => {
     event.preventDefault();
-    alert("form");
+    alert("salam");
   };
 
   return (
