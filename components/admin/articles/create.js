@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
+
+import { useDispatch } from "react-redux";
+import { storeArticle } from "../../../store/slices/articleSlice";
+
+import axios from "axios";
 
 const Create = () => {
   const [data, setData] = useState({
@@ -14,21 +20,28 @@ const Create = () => {
     text: "",
   });
 
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const handleInputs = (event) => {
     let value = event.target.value;
     let name = event.target.name;
 
-    setData((prevState) => {
-      return {
-        ...prevState,
-        [name]: value,
-      };
+    setData({
+      ...data,
+      [name]: value,
     });
   };
 
-  const handleForm = async (event) => {
+  const handleForm = (event) => {
     event.preventDefault();
-    alert("salam");
+
+    axios
+      .post("https://6283d9436b6c317d5ba74d17.endapi.io/articles", data)
+      .then((response) => {
+        dispatch(storeArticle(data));
+        router.push("/admin-panel/articles");
+      });
   };
 
   return (
