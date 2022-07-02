@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ArticleItems = ({ article }) => {
   return (
     <tr>
@@ -8,7 +10,11 @@ const ArticleItems = ({ article }) => {
         <p className="text-sm text-black text-center">{article.image}</p>
       </td>
       <td className="px-4 py-3 whitespace-nowrap">
-        <p className="text-sm text-black text-center">{article.slug}</p>
+        <Link href={"/articles/" + article.id}>
+          <a className="text-sm text-indigo-600 text-center block">
+            {article.slug}
+          </a>
+        </Link>
       </td>
       <td className="px-4 py-3 whitespace-nowrap">
         <p className="text-sm text-black text-center">{article.seo_title}</p>
