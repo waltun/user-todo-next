@@ -1,11 +1,11 @@
 import ArticleList from "./articleList";
 
-import { useDispatch, useSelector } from "react-redux";
-import { setArticle } from "../../../store/slices/articleSlice";
-
-import axios from "axios";
-
 import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { setArticle } from "../../../store/slices/articleSlice";
+import axios from "axios";
 
 const Articles = () => {
   const dispatch = useDispatch();
@@ -35,9 +35,11 @@ const Articles = () => {
               <ArticleList key={article.id} article={article} />
             ))
           ) : (
-            <p className="text-center text-lg fnt-bold">
-              چیزی برای نمایش وجود ندارد
-            </p>
+            <div className="col-span-3">
+              <p className="text-center text-lg fnt-bold">
+                چیزی برای نمایش وجود ندارد
+              </p>
+            </div>
           )}
         </div>
       </div>
