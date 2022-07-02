@@ -1,7 +1,29 @@
 import AdminLayout from "../../../components/layout/admin";
 import ArticleItems from "../../../components/admin/articles/items";
 
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { setArticle } from "../../../store/slices/articleSlice";
+import axios from "axios";
+
 const Articles = () => {
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.article.list);
+
+  useEffect(() => {
+    const getArticles = async () => {
+      let res = await axios.get(
+        "https://6283d9436b6c317d5ba74d17.endapi.io/articles"
+      );
+
+      dispatch(setArticle(res.data.data));
+    };
+
+    getArticles();
+  }, []);
+
   return (
     <div className="bg-white shadow overflow-x-auto rounded-lg hidden md:block">
       <table className="min-w-full">
@@ -25,7 +47,11 @@ const Articles = () => {
           </tr>
         </thead>
         <tbody>
-          <ArticleItems />
+          {articles
+            ? articles.map((article) => (
+                <ArticleItems key={article.id} article={article} />
+              ))
+            : null}
         </tbody>
       </table>
     </div>
