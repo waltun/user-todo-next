@@ -1,7 +1,29 @@
 import AdminLayout from "../../../components/layout/admin";
 import UserItems from "../../../components/admin/users/items";
 
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { setUser } from "../../../store/slices/userSlice";
+import axios from "axios";
+
 const Users = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.user.list);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      let res = await axios.get(
+        "https://6283d9436b6c317d5ba74d17.endapi.io/users"
+      );
+
+      dispatch(setUser(res.data.data));
+    };
+
+    getUsers();
+  }, []);
+
   return (
     <div className="bg-white shadow overflow-x-auto rounded-lg hidden md:block">
       <table className="min-w-full">
@@ -25,7 +47,9 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          <UserItems />
+          {users
+            ? users.map((user) => <UserItems key={user.id} user={user} />)
+            : null}
         </tbody>
       </table>
     </div>
