@@ -27,7 +27,7 @@ const ArticleList = ({ article }) => {
           </p>
         </div>
         <div className="flex justify-center">
-          <Link href={"/articles/" + article.id}>
+          <Link href="/articles/[id]" as={`/articles/${article.id}`}>
             <a className="px-6 py-2 rounded-md bg-yellow-500 text-white hover:bg-yellow-600">
               مشاهده مقاله
             </a>
