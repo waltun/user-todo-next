@@ -12,9 +12,12 @@ const articleSlice = createSlice({
     storeArticle: (state, action) => {
       state.list.push(action.payload);
     },
+    deleteArticle: (state, action) => {
+      state.list = state.list.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
-export const { storeArticle, setArticle } = articleSlice.actions;
+export const { storeArticle, setArticle, deleteArticle } = articleSlice.actions;
 
 export default articleSlice.reducer;
