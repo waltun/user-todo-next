@@ -1,8 +1,48 @@
 import Link from "next/link";
 
+import { useState } from "react";
+import { useRouter } from "next/router";
+
+import { useDispatch } from "react-redux";
+import { storeUser } from "../../../store/slices/userSlice";
+
+import axios from "axios";
+
 const Create = () => {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    type: "normal",
+    password: "",
+  });
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleInputs = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const handleForm = (event) => {
+    event.preventDefault();
+
+    axios
+      .post("https://6283d9436b6c317d5ba74d17.endapi.io/users", data)
+      .then((response) => {
+        dispatch(storeUser(data));
+        router.push("/admin-panel/users");
+      });
+  };
+
   return (
-    <form className="md:grid grid-cols-2 gap-4">
+    <form className="md:grid grid-cols-2 gap-4" onSubmit={handleForm}>
       <div className="bg-gray-50 rounded-md shadow-md border border-gray-300 p-4">
         <div className="mb-4 border-b-2 border-indigo-600 pb-2">
           <p className="text-gray-600">مشخصات کلی</p>
@@ -18,6 +58,7 @@ const Create = () => {
             type="text"
             className="bg-white w-full py-2 px-4 rounded-md border border-gray-400 text-sm"
             placeholder="مثلا : پوریا مستعان"
+            onChange={handleInputs}
           />
         </div>
         <div className="mb-4">
@@ -30,6 +71,7 @@ const Create = () => {
             type="email"
             className="bg-white w-full py-2 px-4 rounded-md border border-gray-400 text-sm"
             placeholder="مثلا : example@gmail.com"
+            onChange={handleInputs}
           />
         </div>
         <div className="mb-4">
@@ -42,6 +84,7 @@ const Create = () => {
             type="number"
             className="bg-white w-full py-2 px-4 rounded-md border border-gray-400 text-sm"
             placeholder="مثلا : 09123456789"
+            onChange={handleInputs}
           />
         </div>
       </div>
@@ -58,6 +101,7 @@ const Create = () => {
             className="bg-white w-full py-2 px-4 rounded-md border border-gray-400 text-sm"
             id="inputType"
             name="type"
+            onChange={handleInputs}
           >
             <option>انتخاب کنید</option>
             <option value="normal">کاربر عادی</option>
@@ -77,6 +121,7 @@ const Create = () => {
             type="password"
             className="bg-white w-full py-2 px-4 rounded-md border border-gray-400 text-sm"
             placeholder="مثلا : ********"
+            onChange={handleInputs}
           />
         </div>
         <div className="mb-4">
