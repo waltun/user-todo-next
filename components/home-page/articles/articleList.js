@@ -22,7 +22,9 @@ const ArticleList = ({ article }) => {
           <p className="text-xs font-medium text-gray-700">1401/04/07</p>
         </div>
         <div className="mb-4">
-          <p className="text-sm text-gray-600 leading-7">{article.text}</p>
+          <p className="text-sm text-gray-600 leading-7">
+            {article.text.substring(0, 100) + " ..."}
+          </p>
         </div>
         <div className="flex justify-center">
           <Link href={"/articles/" + article.id}>

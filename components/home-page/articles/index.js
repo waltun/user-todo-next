@@ -1,28 +1,7 @@
 import ArticleList from "./articleList";
 
-import { useEffect } from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-
-import { setArticle } from "../../../store/slices/articleSlice";
-import axios from "axios";
-
-const Articles = () => {
-  const dispatch = useDispatch();
-  const articles = useSelector((state) => state.article.list);
-
-  useEffect(() => {
-    const getArticles = async () => {
-      let res = await axios.get(
-        "https://6283d9436b6c317d5ba74d17.endapi.io/articles"
-      );
-
-      dispatch(setArticle(res.data.data));
-    };
-
-    getArticles();
-  }, []);
-
+const Articles = ({ articles }) => {
+  articles = articles.data;
   return (
     <>
       <div className="max-w-5xl mx-auto font-IRANSans">
