@@ -1,9 +1,17 @@
 import Link from "next/link";
-
+import { useEffect } from 'react'
 const Edit = ({ id }) => {
-  let res = fetch(`https://6283d9436b6c317d5ba74d17.endapi.io/articles/${id}`);
 
-  console.log(res);
+  const fetchData = async () => {
+    const res = await fetch(`https://6283d9436b6c317d5ba74d17.endapi.io/articles/${id}`);
+    const jsonRes = await res.json();
+    console.log(jsonRes);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
 
   return (
     <form className="md:grid grid-cols-2 gap-4">
