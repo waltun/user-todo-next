@@ -1,9 +1,15 @@
+import Sidebar from "../user-panel/sidebar";
+
 const UserLayout = ({ children }) => {
   return (
-    <>
-      <h1 className="text-center font-xl font-bold text-red-600">User panel</h1>
-      {children}
-    </>
+    <div className="px-32 mt-10 font-IRANSans">
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-3">
+          <Sidebar />
+        </div>
+        <div className="col-span-9">{children}</div>
+      </div>
+    </div>
   );
 };
 
