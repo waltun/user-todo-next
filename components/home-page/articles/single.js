@@ -1,6 +1,8 @@
 import Image from "next/image";
-import nextImage from "../../../public/next.png";
 import Head from "next/head";
+
+import nextImage from "../../../public/next.png";
+
 
 const ArticleSingle = ({ article }) => {
   article = article.data;

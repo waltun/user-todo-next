@@ -1,5 +1,7 @@
-import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../../../store/slices/todoSlice'
+
+import { useDispatch } from 'react-redux'
+
 import axios from 'axios'
 
 const TodoItems = ({ todo }) => {

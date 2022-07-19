@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
+
 import { updateArticle } from "../../../store/slices/articleSlice";
+
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
+
+import axios from "axios";
 
 const Edit = ({ data }) => {
   const [article, setArticle] = useState(data);

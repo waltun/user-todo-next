@@ -1,8 +1,9 @@
-import { BadgeCheckIcon, HomeIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
 import ArticleDropdown from "./articleDropdown";
 import UserDropdown from "./userDropdown";
+
+import { BadgeCheckIcon, HomeIcon } from "@heroicons/react/solid";
 
 const Sidebar = () => {
   return (

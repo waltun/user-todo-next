@@ -1,11 +1,12 @@
+import Link from "next/link";
+
+import { useState } from "react";
+
 import {
   NewspaperIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/solid";
-
-import Link from "next/link";
-import { useState } from "react";
 
 const ArticleDropdown = () => {
   const [dropDown, setDropdown] = useState(false);

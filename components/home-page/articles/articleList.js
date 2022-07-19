@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import nextImage from "../../../public/next.png";
 
 const ArticleList = ({ article }) => {

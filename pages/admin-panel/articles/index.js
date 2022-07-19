@@ -1,11 +1,10 @@
 import AdminLayout from "../../../components/layout/admin";
 import ArticleItems from "../../../components/admin/articles/items";
+import { setArticle } from "../../../store/slices/articleSlice";
 
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
-import { setArticle } from "../../../store/slices/articleSlice";
 import axios from "axios";
 
 const Articles = () => {

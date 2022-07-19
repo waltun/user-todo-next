@@ -1,6 +1,8 @@
-import { UserCircleIcon, UserIcon, LogoutIcon } from "@heroicons/react/outline";
-import { useState } from "react";
 import Link from "next/link";
+
+import { useState } from "react";
+
+import { UserCircleIcon, UserIcon, LogoutIcon } from "@heroicons/react/outline";
 
 const Header = () => {
   const [dropdown, setDropdown] = useState(false);

@@ -1,11 +1,10 @@
 import AdminLayout from "../../../components/layout/admin";
 import UserItems from "../../../components/admin/users/items";
+import { setUser } from "../../../store/slices/userSlice";
 
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 
-import { setUser } from "../../../store/slices/userSlice";
 import axios from "axios";
 
 const Users = () => {

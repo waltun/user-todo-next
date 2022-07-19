@@ -1,11 +1,12 @@
+import Link from "next/link";
+
+import { useState } from "react";
+
 import {
   UserIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/solid";
-
-import Link from "next/link";
-import { useState } from "react";
 
 const UserDropdown = () => {
   const [dropDown, setDropdown] = useState(false);

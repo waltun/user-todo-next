@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import Link from "next/link";
 
 import { deleteUser } from "../../../store/slices/userSlice";
 
+import { useDispatch } from "react-redux";
+
 import axios from "axios";
-import Link from "next/link";
 
 const UserItems = ({ user }) => {
   const dispatch = useDispatch();

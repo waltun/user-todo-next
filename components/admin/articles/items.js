@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { useDispatch } from "react-redux";
-
 import { deleteArticle } from "../../../store/slices/articleSlice";
+
+import { useDispatch } from "react-redux";
 
 import axios from "axios";
 

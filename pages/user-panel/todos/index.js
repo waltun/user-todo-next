@@ -1,10 +1,13 @@
 import UserLayout from "../../../components/layout/user";
 import AddTodo from "../../../components/user-panel/todos/add";
 import TodoItems from "../../../components/user-panel/todos/items";
+import { setTodos } from "../../../store/slices/todoSlice";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+
 import axios from "axios";
-import { setTodos } from "../../../store/slices/todoSlice";
+
 
 const Todos = () => {
   const dispatch = useDispatch();

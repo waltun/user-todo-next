@@ -1,6 +1,7 @@
 import Image from "next/image";
-import userImage from "../../public/user.png";
 import Link from "next/link";
+
+import userImage from "../../public/user.png";
 
 const Sidebar = () => {
   return (

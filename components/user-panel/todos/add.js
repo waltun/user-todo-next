@@ -1,6 +1,8 @@
+import { storeTodo } from "../../../store/slices/todoSlice";
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { storeTodo } from "../../../store/slices/todoSlice";
+
 import axios from 'axios'
 
 const AddTodo = () => {

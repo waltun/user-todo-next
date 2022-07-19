@@ -1,8 +1,12 @@
 import Link from "next/link";
-import { useState } from "react";
-import { UserCircleIcon } from "@heroicons/react/outline";
+
 import NavbarDropdown from "./navbarDropdown";
 import NavbarItems from "./navbarItems";
+
+import { useState } from "react";
+
+import { UserCircleIcon } from "@heroicons/react/outline";
+
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);

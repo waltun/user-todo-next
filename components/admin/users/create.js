@@ -1,10 +1,10 @@
 import Link from "next/link";
 
+import { storeUser } from "../../../store/slices/userSlice";
+
 import { useState } from "react";
 import { useRouter } from "next/router";
-
 import { useDispatch } from "react-redux";
-import { storeUser } from "../../../store/slices/userSlice";
 
 import axios from "axios";
 
