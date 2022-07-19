@@ -21,6 +21,11 @@ const Sidebar = () => {
             </Link>
           </li>
           <li className="py-2">
+            <Link href="/user-panel/todos">
+              <a className="text-sm font-bold text-indigo-500">لیست کار ها</a>
+            </Link>
+          </li>
+          <li className="py-2">
             <Link href="/user-panel/edit/[id]">
               <a className="text-sm font-bold text-indigo-500">
                 ویرایش اطلاعات
